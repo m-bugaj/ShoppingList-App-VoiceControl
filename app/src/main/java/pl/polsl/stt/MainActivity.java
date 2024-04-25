@@ -74,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
                     String operation = "";
                     ArrayList<String> text = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS);
                     tvText.setText(text.get(0));
-//                    tts.speak(text.get(0), TextToSpeech.QUEUE_ADD, null);
 
                     if(text.get(0).toLowerCase().contains("dodaj")) operation = "add";
                     if(text.get(0).toLowerCase().contains("usuń")) operation = "delete";
@@ -89,12 +88,6 @@ public class MainActivity extends AppCompatActivity {
                     if(text.get(0).toLowerCase().contains("wyjdź")) operation = "exit";
                     if(isAdding && !isQuantity) operation = "quantity";
                     if(isAdding && isQuantity) operation = "unit";
-//                    try {
-//                        number = Integer.valueOf(text.get(0));
-//                        operation = "quantity";
-//                    } catch (NumberFormatException e) {
-//                        System.out.println("Invalid integer input");
-//                    }
 
                     switch (operation){
                         case "add":
@@ -110,11 +103,6 @@ public class MainActivity extends AppCompatActivity {
                                 shoppingList.removeIf(e -> e.contains(secondWord));
                                 tts.speak("Usunięto " + secondWord + " z listy zakupów", TextToSpeech.QUEUE_ADD, null);
                             }
-//                            shoppingList.removeIf(e -> e.contains(text.get(0).substring(1,2)));
-//                            shoppingList.indexOf(shoppingList.)
-//                            shoppingList.remove()
-//                            shoppingList.add(text.get(0).toLowerCase().replace("dodaj", "").replace(" ", ""));
-//                            isAdding = true;
                             break;
 
                         case "quantity":
